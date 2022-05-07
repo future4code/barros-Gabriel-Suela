@@ -60,6 +60,12 @@ const nomeProdutos = produtos.filter((produto) => {
 
 //Item B
 
+const produtosComDesconto = produtos.map ((item) => {
+    return {...item, preco: item.preco*0.05}
+})
+console.log(produtosComDesconto)
+
+
 // Item C
 const nomeBebidas = produtos.filter ((item) => {
     if (item.categoria === 'Bebidas'){
@@ -98,12 +104,18 @@ const pokemons = [
 const ordem = pokemons.sort()
 
 const nomesOrdem = ordem.filter((item) => {
-    return item.nome
+    console.log(item.nome)
 })
 
-console.log(nomesOrdem)
+
 
 //Item B
-for (tipos of pokemons){
+/* for (tipos of pokemons){
     
-}
+} */
+const tiposPokemon = pokemons.filter ((item) => {
+    if (item.tipo === 'grama' || item.tipo === 'fogo' || item.tipo === 'água'){
+        console.log(item.tipo)
+    }
+})
+
