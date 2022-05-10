@@ -5,22 +5,25 @@
 
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
-   return array.length
+    return array.length
 }
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  return array.reverse()
+    return array.reverse()
 }
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-    return array.sort(a - b )
+    const index = function(a,b){
+    return a - b
+   }
+    return array.sort(index)
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+   
 }
 
 // EXERCÍCIO 05
