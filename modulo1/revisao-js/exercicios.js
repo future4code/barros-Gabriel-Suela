@@ -54,12 +54,21 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
+    //const maior = Math.max(num1, num2)
+    //return maior
+    
 
 }
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+    const numeroPar = []
+    for (let i = 0; numeroPar.length < n; i++){
+        if (i % 2 == 0){
+            numeroPar.push(i)
+        }
+    }
+   return numeroPar
 }
 
 // EXERCÍCIO 09
