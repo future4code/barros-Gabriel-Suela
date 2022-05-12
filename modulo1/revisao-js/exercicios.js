@@ -57,7 +57,6 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
     //const maior = Math.max(num1, num2)
     //return maior
     
-
 }
 
 // EXERCÍCIO 08
@@ -106,12 +105,24 @@ function retornaPessoaAnonimizada(pessoa) {
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+    const podemEntrar = []
+    for (let pessoa of pessoas){
+        if (pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60){
+            podemEntrar.push(pessoa)
+        }
+    }
+    return podemEntrar
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  const naoPodemEntrar = []
+  for (let pessoa of pessoas){
+      if( pessoa.altura <= 1.5 || pessoa.idade <= 14 || pessoa.idade >= 60){
+          naoPodemEntrar.push(pessoa)
+      }
+  }
+  return naoPodemEntrar
 }
 
 // EXERCÍCIO 14
