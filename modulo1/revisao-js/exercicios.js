@@ -54,8 +54,16 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-    //const maior = Math.max(num1, num2)
-    //return maior
+    const maior = Math.max(num1, num2)
+    const divisivel = (num2  % num1) == 0
+    const dif = Math.max(num1, num2) - Math.min(num1, num2)
+
+    const obj = {
+        maiorNumero: maior,
+        maiorDivisivelPorMenor: divisivel,
+        diferenca: dif
+    }
+    return obj
     
 }
 
@@ -85,6 +93,15 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
+
+    let maiorMenor = []
+    array.sort((a,b) => b - a)
+    
+    maiorMenor.push(array[1])
+    array.sort((a,b)=> a - b)
+
+    maiorMenor.push(array[1])
+    return maiorMenor
     
 }
 
@@ -128,11 +145,14 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
 
+    
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    consultas.sort((a,b)=> b.nome - a.nome ? 1 : b.nome > a.nome ? -1 :0)
+    
+    return consultas
 }
 
 // EXERCÍCIO 15B
