@@ -145,17 +145,17 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
 
-    
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-    consultas.sort((a,b)=> b.nome - a.nome ? 1 : b.nome > a.nome ? -1 :0)
+    consultas.sort((a,b) => b.nome - a.nome ? 1 : b.nome > a.nome ? -1 :0)
     
     return consultas
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+   consultas.sort((a,b) => b.dataDaConsulta - a.dataDaConsulta ? 1 : b.dataDaConsulta > a.dataDaConsulta ? -1 :0)
+   return consultas
 }
