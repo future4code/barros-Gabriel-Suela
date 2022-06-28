@@ -1,0 +1,25 @@
+.small-card-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 90px;
+}
+
+.small-card-container img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.small-card-item1 {
+    display: flex;
+    align-items: center;
+}
+
+.small-card-item2 {
+    display: flex;
+    align-items: center;
+}
+

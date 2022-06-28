@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+.page-section-container {
+  width: 40vw;
+  margin: 10px 0;
+}
+
+.page-section-container > h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+h4 {
+  color: white;
+}

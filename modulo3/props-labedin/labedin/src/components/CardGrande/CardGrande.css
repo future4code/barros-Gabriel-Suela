@@ -1,0 +1,33 @@
+.bigcard-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 200px;
+}
+
+.bigcard-container > img {
+    width: 70px;
+    margin-right: 15px;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+.bigcard-container h3 {
+    margin-bottom: 15px;
+    color: black;
+    font-weight: bold;
+}
+
+.bigcard-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+
+.bigcard-container p {
+    color: white;
+    
+}
