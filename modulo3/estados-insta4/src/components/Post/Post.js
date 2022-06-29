@@ -16,10 +16,10 @@ function Post(props){
   const [comentando, setComentando] = useState(false)
   const [numeroComentarios, setNumeroComentarios] = useState(0)
   const [inputText, setInputText] = useState("")
-  const handleInputText = () => {
-    setInputText = (e) => 
-      setInputText(e.target.value)
-      console.log(inputText)
+  
+  const handleInputText = (e) => {
+    setInputText(e.target.value)
+    console.log(inputText)
   }
 
   const onClickCurtida = () => {
