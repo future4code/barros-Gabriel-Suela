@@ -1,0 +1,11 @@
+.chatHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.chatHeader h1 {
+    margin: 10px;
+}

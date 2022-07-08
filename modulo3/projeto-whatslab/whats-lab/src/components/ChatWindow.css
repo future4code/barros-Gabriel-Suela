@@ -1,0 +1,86 @@
+.chatWindow {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+
+.chatWindow-body {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    overflow-y: auto;
+    background-color: #ded5ce;
+    
+    
+}
+
+.chatWindow-footer {
+    display: flex;
+    height: 62px;
+    align-items: center;
+    background-color: #d46b02;
+}
+
+.chatWindow-pre{
+display: flex;
+}
+
+.chatWindow-rem {
+    width: 90%;
+    height: 40px;
+    border: 2px solid orange;
+    outline: 0;
+    background-color: white;
+    border-radius: 20px;
+    font-family: 15px;
+    color: #4A4A4A;
+    padding-left: 15px;
+    margin: 0 15px;
+}
+
+.chatWindow-rem:hover{
+    border: 2px solid greenyellow;
+}
+
+.chatWindow-inputarea{
+    flex: 1;
+}
+
+.chatWindow-input{
+    width: 100%;
+    height: 40px;
+    border: 2px solid orange;
+    outline: 0;
+    background-color: white;
+    border-radius: 20px;
+    font-family: 15px;
+    color: #4A4A4A;
+    padding-left: 15px;
+}
+
+.chatWindow-input:hover{
+    border: 2px solid greenyellow;
+}
+
+.chatWindow--btn button {
+    width: 100px;
+    height: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #dddbdb;
+    border: none;
+    margin: 0 15px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chatWindow--btn button:hover{
+    background-color: #8a8a8a;
+}
+

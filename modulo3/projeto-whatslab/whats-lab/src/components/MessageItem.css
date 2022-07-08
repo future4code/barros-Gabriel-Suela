@@ -1,0 +1,29 @@
+.messageLine{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+.messageItem {
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px #ccc;
+    align-items: flex-end;
+    padding: 5px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #e67c35;
+    flex: 1;
+    cursor: pointer;
+}
+
+p {
+    padding: 0 5px;
+}
+
+strong {
+    padding: 0 5px;
+    margin: 5px 0;
+}
