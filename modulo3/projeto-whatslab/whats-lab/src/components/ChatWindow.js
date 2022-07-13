@@ -4,7 +4,7 @@ import MessageItem from "./MessageItem";
 
 
 export default () => {
-  const [mensagens, setMensagens] = useState([{nome:'', msg: ''}])
+  const [mensagens, setMensagens] = useState([])
   const [message, setMessage] = useState("");
   const [user, setUser] = useState("");
 
@@ -61,8 +61,11 @@ export default () => {
   return (
     <div className="chatWindow">
       <div className="chatWindow-body" >
-            <ul onClick={handleDoubleClick}>
-               {mensagensMap} 
+            <ul>
+              <li onClick={handleDoubleClick}>
+                {mensagensMap} 
+              </li>
+               
             </ul>
             
        
