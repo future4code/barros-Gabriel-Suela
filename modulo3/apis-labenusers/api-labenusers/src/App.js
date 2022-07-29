@@ -1,45 +1,64 @@
 
 import './App.css';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function App() {
 
+  const [users, setUsers] = useState([])
   const [nome, setNome] = useState('')
-  const [email, setEmail] = useState('')
-  const [usuario, setUsuario] = useState([])
+  const [email, setEmail] = useState ('')
 
-  const usuarioMap = usuario.map((item) => {
-    return (
-      <li key={item.id}
-      nome={item.nome}
-      email={item.email}
-      />
-    )
-  })
+  useEffect(() =>{
+    getAllUsers()
+  }, [])
 
-  console.log(usuarioMap)
-  const handleNome = (e) => {
+  const body = {
+    "name": nome,
+    "email": email
+}
+
+  const getAllUsers = () => {
+    axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',{
+      headers: {
+        Authorization: "gabriel-suela-barros"
+      }
+    }).then((res)=>{
+      setUsers(res.data)
+    }).catch((err)=>{
+      console.log(err.response)
+    })
+  }
+
+
+  const createUser = (e) => {
     e.preventDefault()
+    axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',body,{
+      headers: {
+        Authorization: "gabriel-suela-barros"
+      }
+    }).then((res)=>{
+      console.log(res.data)
+      alert('Usuário criado com sucesso')
+      getAllUsers()
+    }).catch((err)=>{
+      alert('Ops! Alguma coisa deu errado')
+      console.log(err)
+    })
+    
+  }
+
+  const handleNome  = (e) =>{
+    
     setNome(e.target.value)
-    console.log(nome)
+
   }
 
   const handleEmail = (e) => {
-    e.preventDefault()
+    
     setEmail(e.target.value)
   }
-
-  const handleClick = (e) => {
-    e.preventDefault()
-    const newUser = [...usuario, {nome: usuario, email:email}]
-    setUsuario(newUser)
-    setNome('')
-    setEmail('')
-    alert('Usuario cadastrado')
-  }
-
 
   return (
     <div className="App">
@@ -63,14 +82,21 @@ function App() {
       onChange={handleEmail}
       />
       <button
-      onClick={handleClick}
+      onClick={createUser}
       >Enviar</button>
 
       
         
       </form>
      
-        {usuarioMap}
+        {users.map((user)=>{
+          return (
+            <li key={user.id}>
+              {user.name}
+
+            </li>
+          )
+        })}
      
       
       </div>
