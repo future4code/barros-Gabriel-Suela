@@ -1,0 +1,27 @@
+.App {
+  width: 700px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.header {
+  display: flex;
+  border-bottom: 1px solid #f9f9f9;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo{
+  object-fit: contain;
+  height: 40px;
+}
+
+.header__icon{
+  margin: 20px;
+  
+}
