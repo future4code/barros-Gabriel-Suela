@@ -6,7 +6,6 @@ Projeto proposto pela instituição Labenu.
 <br>
 <br>
 
-
 # Projeto de Fixação: Astromatch
 
 Olá, pessoal!
@@ -31,10 +30,11 @@ Estamos fornecendo uma API específica para esse projeto, cuja documentação se
 
 
 ## :camera: Imagens
-![image](https://user-images.githubusercontent.com/93896739/164999867-aa06f450-ec22-46da-9ab8-c3af4762c674.png)
-![image](https://user-images.githubusercontent.com/93896739/164999893-45144dba-4479-4496-b7b8-687813e845c6.png)
+![image](https://user-images.githubusercontent.com/96388423/182052360-5f17f95b-533f-4846-8183-9f000901a4c8.png)
+
+![image](https://user-images.githubusercontent.com/96388423/182052555-01dcb712-e315-455a-bb47-74e12432ae1f.png)
 
 
 ## :black_nib: Autor
 
-| [<img src="https://avatars.githubusercontent.com/u/93896739?v=4" width=115><br><sub>Gabriel Suela</sub>](https://github.com/Pods89) |
+ <img src="https://avatars.githubusercontent.com/u/96388423?v=4" width=115><br><sub>Gabriel Suela</sub> 
