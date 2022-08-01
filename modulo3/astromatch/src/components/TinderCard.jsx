@@ -162,13 +162,13 @@ function tinderCard() {
 
   const profileCard = profile ? (
     <div>
-      <figure>
+      <div>
       <CardInfo src={profile.photo} />
       <InfoPerson>
         {profile.name}, {profile.age}
       </InfoPerson>
       <BioPerson>{profile.bio}.</BioPerson>
-      </figure>
+      </div>
       <LikeArea>
         <BotaoLike
           onClick={() => {
