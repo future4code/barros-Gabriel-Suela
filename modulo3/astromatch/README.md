@@ -26,7 +26,7 @@ Estamos fornecendo uma API específica para esse projeto, cuja documentação se
 * Responsividade
 
 ## :link: Link Surge 
-* https://workable-meat.surge.sh
+* https://meaty-cakes.surge.sh/
 
 
 ## :camera: Imagens
