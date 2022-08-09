@@ -107,6 +107,7 @@ const ResetButton = styled.button`
   touch-action: manipulation;
 `
 
+
 function tinderCard() {
   const [profile, setProfile] = useState(undefined);
 
@@ -172,14 +173,14 @@ function tinderCard() {
       <LikeArea>
         <BotaoLike
           onClick={() => {
-            choosePerson(profile.id, true);
+            choosePerson(profile.id);
           }}
         >
           💚
         </BotaoLike>
         <BotaoDislike
           onClick={() => {
-            choosePerson(profile.id, false);
+            choosePerson(profile.id);
           }}
         >
           ❌
