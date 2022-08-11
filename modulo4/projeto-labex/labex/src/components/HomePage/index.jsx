@@ -6,15 +6,21 @@ function HomePage() {
 
     const navigate = useNavigate()
 
-    
+    const goToTrips = () => {
+      navigate ('/trips/list')
+    }
+
+    const goToAdmin = () => {
+      navigate('/admin/trips/list')
+    }
 
 
   return (
     <>
     <C.Container>
      <h1>LabeX</h1>
-     <C.Button>Ver Viagens</C.Button>
-     <C.Button>Área de Admin</C.Button>
+     <C.Button onClick={goToTrips}>Ver Viagens</C.Button>
+     <C.Button onClick={goToAdmin}>Área de Admin</C.Button>
 
     </C.Container>
     

@@ -1,24 +1,44 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom'
+import * as C from './style'
+import { useNavigate } from 'react-router-dom'
 
-function AdminHomePage() {
+function LoginPage() {
+
     const navigate = useNavigate()
 
-    const newTrips = () => {
-        navigate('/admin/trips/create')
+    const goLogIn = () => {
+        navigate('/admin/trips/list')
     }
 
     const lastPage = () => {
         navigate(-1)
     }
 
+
+
+
   return (
-    <div>
-        <p>Admin control</p>
-        <button onClick={newTrips}>Nova viagem</button>
-        <button onClick={lastPage}>Voltar</button>
-    </div>
+    <>
+    <C.Container>
+
+        <h1>Login</h1>
+
+        <form>
+        <input type="email" placeholder='E-mail'/>
+        <input type='password' placeholder='Senha'/>
+
+        </form>
+       
+
+    </C.Container>
+
+    <C.ButtonArea>
+    <button>Voltar</button>
+    <button onClick={goLogIn}>Entrar</button>
+    </C.ButtonArea>
+    
+    </>
   )
 }
 
-export default AdminHomePage
+export default LoginPage
