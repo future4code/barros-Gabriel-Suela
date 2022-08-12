@@ -23,9 +23,10 @@ function ListTrips() {
   }
 
 
-  const tripsList = loading&&data.map((item)=>(
+  const tripsList = data&&data.map((item)=>(
     
       <div key={item.id}>
+        
         <C.Card onClick={goToDetails}>
         <p>Nome: {item.name}</p> 
         <p>Data: {item.date}</p>
@@ -45,6 +46,8 @@ function ListTrips() {
       <h1>Lista de Viagens</h1>
       
       <C.Trips>
+      {loading && <span>Carregando...</span>}
+      {!loading && error && <span>Ocorreu um erro</span>}
       {tripsList}
       
       </C.Trips>

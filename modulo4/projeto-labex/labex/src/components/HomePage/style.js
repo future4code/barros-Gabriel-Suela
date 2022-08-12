@@ -6,7 +6,12 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     min-height: 100vh;
+    
 
+    h1 {
+        font-size: 5rem;
+        font-weight: 900;
+    }
     
 `
 

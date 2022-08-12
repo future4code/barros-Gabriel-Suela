@@ -9,11 +9,20 @@ export const Container = styled.div `
         color: #E04D01;
         margin-bottom: 10px;
         text-align: center;
+        font-weight: 900;
     }
 
     button {
         text-align: center;
     }
+
+    span {
+        font-size: 2rem;
+        font-weight: 500;
+        padding: 5px;
+        color: #E04D01;
+    }
+
 `
 
 export const ButtonArea = styled.div `
