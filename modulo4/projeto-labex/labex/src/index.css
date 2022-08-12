@@ -4,6 +4,8 @@
 body {
   font-family: "Saira", sans-serif;
   font-size: 16px;
+  background-color: #251D3A;
+  overflow-x: hidden;
 }
 
 *{
@@ -14,5 +16,21 @@ body {
 }
 
 h1{
+  color: #E04D01;
   font-size: 2rem;
+}
+
+button{
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  outline: 0;
+  border: 0;
+  width: 150px;
+  background-color: #FF7700 ;
+  font-size: 1rem;
+  color: #2A2550;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 10px;
 }

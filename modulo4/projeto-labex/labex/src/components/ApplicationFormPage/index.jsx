@@ -7,6 +7,10 @@ function ApplicationFormPage() {
 
     const navigate = useNavigate()
 
+    const lastPage = () => {
+      navigate (-1)
+    }
+
 
   return (
     <C.Container>
@@ -23,7 +27,7 @@ function ApplicationFormPage() {
       </form>
 
       <div>
-        <Button>Voltar</Button>
+        <Button onClick={lastPage}>Voltar</Button>
         <Button>Enviar</Button>
       </div>
 

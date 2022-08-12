@@ -21,21 +21,25 @@ function LoginPage() {
     <>
     <C.Container>
 
-        <h1>Login</h1>
-
+        
+    <C.FormArea>
+    <h1>Login</h1>
         <form>
         <input type="email" placeholder='E-mail'/>
         <input type='password' placeholder='Senha'/>
 
         </form>
        
-
-    </C.Container>
-
     <C.ButtonArea>
     <button>Voltar</button>
     <button onClick={goLogIn}>Entrar</button>
     </C.ButtonArea>
+    </C.FormArea>
+     
+
+    </C.Container>
+
+    
     
     </>
   )

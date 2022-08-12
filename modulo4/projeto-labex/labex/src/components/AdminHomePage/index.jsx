@@ -13,6 +13,10 @@ function AdminHomePage() {
         navigate(-1)
     }
 
+    const logOut = () => {
+      navigate('/')
+    }
+
   return (
     <>
     <C.Container>
@@ -22,7 +26,7 @@ function AdminHomePage() {
     <C.ButtonArea>
       <button onClick={lastPage}>Voltar</button>
       <button onClick={newTrips}>Criar Viagem</button>
-      <button>Logout</button>
+      <button onClick={logOut}>Logout</button>
     </C.ButtonArea>
     
     </>

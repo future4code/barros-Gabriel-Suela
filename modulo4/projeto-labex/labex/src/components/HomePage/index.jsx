@@ -11,20 +11,21 @@ function HomePage() {
     }
 
     const goToAdmin = () => {
-      navigate('/admin/trips/list')
+      navigate('/login')
     }
 
 
   return (
-    <>
     <C.Container>
+    
+
      <h1>LabeX</h1>
      <C.Button onClick={goToTrips}>Ver Viagens</C.Button>
      <C.Button onClick={goToAdmin}>Área de Admin</C.Button>
 
-    </C.Container>
+ 
     
-    </>
+    </C.Container>
   )
 }
 
