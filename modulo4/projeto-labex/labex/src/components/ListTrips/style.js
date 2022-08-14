@@ -23,6 +23,7 @@ export const Container = styled.div `
         color: #E04D01;
     }
 
+
 `
 
 export const ButtonArea = styled.div `
@@ -44,19 +45,19 @@ export const Card = styled.div`
     margin-bottom: 20px;
     padding: 10px;
     width: 600px;
-    height: 250px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    cursor: pointer;
     
-    &:hover {
-        transform: scale(1.02);
-        transition: all .2s ease-in-out;
-    }
 
     p {
         font-weight: 500;
         padding: 5px;
         color: #E04D01;
+    }
+
+    button {
+        width: 100%;
+        border-radius: 10px;
+        margin: 0;
     }
 `

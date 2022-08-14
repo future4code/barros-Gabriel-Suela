@@ -2,8 +2,11 @@ import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import { Button } from '../HomePage/style'
 import * as C from './style'
+import useRequestData from '../../hook/useRequestData'
+import { BASE_URL } from '../constants/constants'
 
 function ApplicationFormPage() {
+
 
     const navigate = useNavigate()
 
@@ -12,13 +15,16 @@ function ApplicationFormPage() {
     }
 
 
+
   return (
     <C.Container>
       <h1>Inscreva-se para uma viagem</h1>
 
       <form>
 
-      <select>Escolha uma viagem</select>
+      <select >
+   
+      </select>
       <input type="text" placeholder='Nome'></input>
       <input type="number" placeholder='Idade'></input>
       <input type="text" placeholder='Texto de Candidatura'></input>

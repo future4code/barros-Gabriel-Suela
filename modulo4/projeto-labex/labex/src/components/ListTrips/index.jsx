@@ -27,12 +27,13 @@ function ListTrips() {
     
       <div key={item.id}>
         
-        <C.Card onClick={goToDetails}>
+        <C.Card>
         <p>Nome: {item.name}</p> 
         <p>Data: {item.date}</p>
         <p>Descrição: {item.description}</p>
         <p>Planeta: {item.planet}</p>
         <p>Duração: {item.durationInDays} dias</p>
+        <button onClick={goToDetails}>Aplicar</button>
         </C.Card>
         
       </div>
@@ -43,18 +44,20 @@ function ListTrips() {
     
     
     <C.Container>
-      <h1>Lista de Viagens</h1>
+   
+        <h1>Lista de Viagens</h1>
+        
+    
+      
       
       <C.Trips>
+      <button onClick={lastPage}>Voltar</button>
       {loading && <span>Carregando...</span>}
       {!loading && error && <span>Ocorreu um erro</span>}
       {tripsList}
       
       </C.Trips>
-      <C.ButtonArea>
-      <button onClick={lastPage}>Voltar</button>
-      <button onClick={goToSubscribe}>Inscrever-se</button>
-      </C.ButtonArea>
+  
       
       
     </C.Container>

@@ -2,6 +2,8 @@ import React from 'react'
 import * as C from './style'
 import { useNavigate } from 'react-router-dom'
 
+
+
 function LoginPage() {
 
     const navigate = useNavigate()
@@ -18,12 +20,14 @@ function LoginPage() {
 
 
   return (
-    <>
+    
     <C.Container>
-
+  
         
     <C.FormArea>
-    <h1>Login</h1>
+    <h1>Login </h1>
+    
+    
         <form>
         <input type="email" placeholder='E-mail'/>
         <input type='password' placeholder='Senha'/>
@@ -31,7 +35,7 @@ function LoginPage() {
         </form>
        
     <C.ButtonArea>
-    <button>Voltar</button>
+    <button onClick={lastPage}>Voltar</button>
     <button onClick={goLogIn}>Entrar</button>
     </C.ButtonArea>
     </C.FormArea>
@@ -39,9 +43,9 @@ function LoginPage() {
 
     </C.Container>
 
+  
     
-    
-    </>
+  
   )
 }
 

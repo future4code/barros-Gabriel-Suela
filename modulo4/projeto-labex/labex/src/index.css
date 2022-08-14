@@ -6,6 +6,7 @@ body {
   font-size: 16px;
   background-color: #251D3A;
   overflow-x: hidden;
+  
 }
 
 *{
@@ -28,9 +29,10 @@ button{
   border: 0;
   width: 150px;
   background-color: #FF7700 ;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #2A2550;
   font-weight: 700;
   cursor: pointer;
   margin: 10px;
+  
 }
