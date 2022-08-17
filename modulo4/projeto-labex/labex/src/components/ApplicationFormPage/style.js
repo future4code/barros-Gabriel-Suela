@@ -21,6 +21,8 @@ export const Container = styled.div `
         margin-bottom: 20px;
         border-radius: 10px;
         padding: 10px;
+        color: #2A2550;
+        font-weight: 600;
     }
 
   

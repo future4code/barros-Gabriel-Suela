@@ -7,8 +7,15 @@ import { BASE_URL } from "../constants/constants";
 import axios from "axios";
 import { useForm } from "../../hook/useForm";
 
+
+
+
 function ApplicationFormPage() {
-  const [data] = useRequestData(`${BASE_URL}gabriel/trips/list`);
+  const [data] = useRequestData(`${BASE_URL}gabriel/trips`);
+
+  const notify = () => {
+    toast('Algo deu errado')
+  }
 
   const [form, handleInput] = useForm({
     name: "",
@@ -28,11 +35,11 @@ function ApplicationFormPage() {
         country: form.country,
       })
       .then((res) => {
-        alert("Usuário adicionado");
+        alert("Usuário adicionado a viagem!");
         console.log(res.data);
       })
       .catch((err) => {
-        alert("Algo deu errado");
+        toast
         console.log(err.response);
       });
 
@@ -52,7 +59,8 @@ function ApplicationFormPage() {
   };
 
   return (
-    <C.Container>
+     
+      <C.Container>
       <h1>Inscreva-se para uma viagem</h1>
 
       <form onSubmit={applyToTrip}>
@@ -87,11 +95,12 @@ function ApplicationFormPage() {
           value={form.occupation}
           onChange={handleInput}
         ></input>
-        <select
+        <input
+          type="text"
           name="country"
           value={form.country}
           onChange={handleInput}
-        ></select>  
+        ></input>  
         
       <div>
         <Button onClick={lastPage}>Voltar</Button>
@@ -101,6 +110,8 @@ function ApplicationFormPage() {
 
     
     </C.Container>
+  
+   
   );
 }
 

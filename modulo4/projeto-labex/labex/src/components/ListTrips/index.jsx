@@ -33,7 +33,7 @@ function ListTrips() {
         <p>Descrição: {item.description}</p>
         <p>Planeta: {item.planet}</p>
         <p>Duração: {item.durationInDays} dias</p>
-        <button onClick={goToDetails}>Aplicar</button>
+        <button onClick={goToSubscribe}>Aplicar</button>
         </C.Card>
         
       </div>
@@ -51,11 +51,11 @@ function ListTrips() {
       
       
       <C.Trips>
-      <button onClick={lastPage}>Voltar</button>
+      
       {loading && <span>Carregando...</span>}
       {!loading && error && <span>Ocorreu um erro</span>}
       {tripsList}
-      
+      <button onClick={lastPage}>Voltar</button>
       </C.Trips>
   
       
