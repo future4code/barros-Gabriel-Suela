@@ -1,52 +1,66 @@
-import React from 'react'
-import * as C from './style'
-import { useNavigate } from 'react-router-dom'
-
-
+import React from "react";
+import * as C from "./style";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "../../hook/useForm";
+import axios from "axios";
+import { BASE_URL } from "../constants/constants";
 
 function LoginPage() {
 
-    const navigate = useNavigate()
+  const [body, handleInput] = useForm({email:"", password:""});
+  const navigate = useNavigate();
+  console.log(body)
 
-    const goLogIn = () => {
-        navigate('/admin/trips/list')
-    }
+  const logIn = (e) => {
+    axios
+      .post(`${BASE_URL}gabriel/login`, body)
+      .then((res) => {
+        alert("LOGADO");
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+    e.preventDefault();
+  };
 
-    const lastPage = () => {
-        navigate(-1)
-    }
+  const goLogIn = () => {
+    navigate("/admin/trips/list");
+  };
 
-
-
+  const lastPage = () => {
+    navigate(-1);
+  };
 
   return (
-    
     <C.Container>
-  
-        
-    <C.FormArea>
-    <h1>Login </h1>
-    
-    
-        <form>
-        <input type="email" placeholder='E-mail'/>
-        <input type='password' placeholder='Senha'/>
+      <C.FormArea>
+        <h1>Login </h1>
 
+        <form onSubmit={logIn}>
+          <input
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            value={body.email}
+            onChange={handleInput}
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          />
+
+          <input
+            name="password"
+            type="password"
+            placeholder="Senha"
+            value={body.password}
+            onChange={handleInput}
+            required
+          />
+          <button>Entrar</button>
         </form>
-       
-    <C.ButtonArea>
-    <button onClick={lastPage}>Voltar</button>
-    <button onClick={goLogIn}>Entrar</button>
-    </C.ButtonArea>
-    </C.FormArea>
-     
-
+      </C.FormArea>
     </C.Container>
-
-  
-    
-  
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;

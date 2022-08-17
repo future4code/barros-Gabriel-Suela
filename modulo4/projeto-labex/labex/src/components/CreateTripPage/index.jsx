@@ -1,5 +1,6 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
+import * as C from './style'
 
 function CreateTripPage() {
 
@@ -7,7 +8,17 @@ function CreateTripPage() {
 
 
   return (
-    <div>CreateTripPage</div>
+    <C.Container>
+
+    <form>
+
+    <input type="text"/>
+    
+
+    </form>
+
+
+    </C.Container>
   )
 }
 
