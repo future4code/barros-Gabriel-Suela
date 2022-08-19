@@ -1,8 +1,14 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
+import { useProtectedPage } from '../../hook/useProtectedPage'
 import * as C from './style'
 
 function AdminHomePage() {
+    
+
+
+
+    useProtectedPage()
     const navigate = useNavigate()
 
     const newTrips = () => {
@@ -14,7 +20,8 @@ function AdminHomePage() {
     }
 
     const logOut = () => {
-      navigate('/')
+      localStorage.removeItem('token')
+      navigate('/login')
     }
 
   return (

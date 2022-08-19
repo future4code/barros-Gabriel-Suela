@@ -4,12 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hook/useForm";
 import axios from "axios";
 import { BASE_URL } from "../constants/constants";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function LoginPage() {
 
-  const [body, handleInput, ] = useForm({email:"", password:""});
+  const [body, handleInput ] = useForm({email:"", password:""});
   const navigate = useNavigate();
   console.log(body)
 
@@ -18,18 +17,16 @@ function LoginPage() {
       .post(`${BASE_URL}gabriel/login`, body)
       .then((res) => {
         alert("LOGADO");
-        toast.error(res.data);
+        console.log(res.data)
+        localStorage.setItem('token', res.data.token)
+        navigate('/admin/trips/list')
       })
       .catch((err) => {
-        toast.error(err.response);
+        alert(err.response);
       });
-      
     e.preventDefault();
   };
 
-  const goLogIn = () => {
-    navigate("/admin/trips/list");
-  };
 
   const lastPage = () => {
     navigate(-1);

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-function useRequestData(url) {
+function useRequestData(url, headers) {
+
     const [data, setData] = useState(undefined)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
@@ -9,18 +10,17 @@ function useRequestData(url) {
 
     useEffect(()=>{
      setLoading(true)
-      axios.get(url)
+      axios.get(url,headers)
       .then((res)=>{
         setLoading(false)
         setData(res.data.trips)
       })
-      
       .catch((err)=>{
         setLoading(false)
         setError(err)
         console.log(err)
       })
-    }, [])
+    }, [url])
 
 
   return [data, loading, error]

@@ -7,15 +7,12 @@ import { BASE_URL } from "../constants/constants";
 import axios from "axios";
 import { useForm } from "../../hook/useForm";
 
-
-
-
 function ApplicationFormPage() {
   const [data] = useRequestData(`${BASE_URL}gabriel/trips`);
 
   const notify = () => {
-    toast('Algo deu errado')
-  }
+    toast("Algo deu errado");
+  };
 
   const [form, handleInput] = useForm({
     name: "",
@@ -39,18 +36,15 @@ function ApplicationFormPage() {
         console.log(res.data);
       })
       .catch((err) => {
-        toast
+        toast;
         console.log(err.response);
       });
 
-      e.preventDefault()
+    e.preventDefault();
   };
 
-  const tripsList = data&&data.map((item)=>(
-    
-    <option key={item.id}>{item.name} </option>
-  
-))
+  const tripsList =
+    data && data.map((item) => <option key={item.id}>{item.name} </option>);
 
   const navigate = useNavigate();
 
@@ -59,8 +53,7 @@ function ApplicationFormPage() {
   };
 
   return (
-     
-      <C.Container>
+    <C.Container>
       <h1>Inscreva-se para uma viagem</h1>
 
       <form onSubmit={applyToTrip}>
@@ -100,18 +93,14 @@ function ApplicationFormPage() {
           name="country"
           value={form.country}
           onChange={handleInput}
-        ></input>  
-        
-      <div>
-        <Button onClick={lastPage}>Voltar</Button>
-        <Button>Enviar</Button>
-      </div>
-      </form>
+        ></input>
 
-    
+        <div>
+          <Button onClick={lastPage}>Voltar</Button>
+          <Button>Enviar</Button>
+        </div>
+      </form>
     </C.Container>
-  
-   
   );
 }
 
