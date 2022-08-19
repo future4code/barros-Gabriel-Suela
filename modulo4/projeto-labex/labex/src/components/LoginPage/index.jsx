@@ -10,7 +10,7 @@ function LoginPage() {
 
   const [body, handleInput ] = useForm({email:"", password:""});
   const navigate = useNavigate();
-  console.log(body)
+  
 
   const logIn = (e) => {
     axios
@@ -28,8 +28,8 @@ function LoginPage() {
   };
 
 
-  const lastPage = () => {
-    navigate(-1);
+  const goToHome = () => {
+    navigate("/");
   };
 
   return (
@@ -57,13 +57,14 @@ function LoginPage() {
             required
           />
           <C.ButtonArea>
-          <button onClick={lastPage} >Voltar</button>
-          <button >Entrar</button>
+          <button onClick={goToHome}>Voltar</button>
+          <button>Entrar</button>
           </C.ButtonArea>
           
         </form>
         
       </C.FormArea>
+     
     </C.Container>
   );
 }
