@@ -18,7 +18,7 @@ export const goToHome = (navigate) => {
   navigate("/");
 };
 
-export const goToTripDetails = (id) => {
+export const goToTripDetails = (navigate,id) => {
   navigate(`/admin/trips/${id}`)
 }
 

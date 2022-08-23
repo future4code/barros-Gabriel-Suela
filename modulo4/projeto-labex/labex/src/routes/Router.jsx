@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import AdminHomePage from "../components/AdminHomePage";
 import ApplicationFormPage from "../components/ApplicationFormPage";
 import CreateTripPage from "../components/CreateTripPage";
@@ -9,6 +9,8 @@ import TripDetails from "../components/TripDetails";
 import HomePage from "../components/HomePage";
 
 function Router() {
+  
+
   return (
     <BrowserRouter>
       <Routes>

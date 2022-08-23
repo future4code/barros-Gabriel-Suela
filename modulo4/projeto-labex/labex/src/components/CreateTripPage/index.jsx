@@ -8,7 +8,7 @@ import {lastPage} from "../../routes/Coordinator"
 
 function CreateTripPage() {
   const navigate = useNavigate();
-  const { form, handleInput, clear } = useForm({
+  const [form, handleInput, clear] = useForm({
     name: "",
     planet: "",
     date: "",
@@ -27,24 +27,19 @@ function CreateTripPage() {
       durationInDays: form.durationInDays,
     };
     axios
-      .post(`${BASE_URL}gabriel/trips`, body, {
-        headers: {
-          "Content-type": "application/json",
-          auth: token,
-        },
-      })
+      .post(`${BASE_URL}gabriel/trips`, body, {headers: {auth: token}})
       .then((res) => {
         alert("Viagem criada com sucesso");
         console.log(res.data);
+        clear()
       })
       .catch((err) => {
         alert("Ops! Ocorreu um erro ao criar ao criar a viagem");
         console.log(err.response);
       });
-    clear();
+    
   };
 
-  console.log(createTrip);
   return (
     <C.Container>
       <h1>Crie uma viagem</h1>
@@ -52,6 +47,7 @@ function CreateTripPage() {
         <input
           type="text"
           name="name"
+          id="name"
           value={form.name}
           onChange={handleInput}
           placeholder="Nome"
@@ -62,6 +58,7 @@ function CreateTripPage() {
         <input
           type="text"
           name="planet"
+          id="planet"
           value={form.planet}
           onChange={handleInput}
           placeholder="Planeta"
@@ -69,12 +66,14 @@ function CreateTripPage() {
         <input
           type="date"
           name="date"
+          id="date"
           value={form.date}
           onChange={handleInput}
           placeholder="Data"
         />
         <input
           type="text"
+          id="description"
           name="description"
           value={form.description}
           onChange={handleInput}
@@ -82,6 +81,7 @@ function CreateTripPage() {
         />
         <input
           type="number"
+          id="durationInDays"
           name="durationInDays"
           value={form.durationInDays}
           onChange={handleInput}

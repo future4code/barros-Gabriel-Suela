@@ -6,14 +6,13 @@ import { BASE_URL } from "../constants/constants";
 import * as C from "./style";
 import { FaTrash } from "react-icons/fa";
 import axios from "axios";
-import { lastPage, newTrips } from "../../routes/Coordinator";
+import { goToTripDetails, lastPage, newTrips } from "../../routes/Coordinator";
 
 function AdminHomePage() {
-  const [data, reload, setReload] = useRequestData(`${BASE_URL}gabriel/trips`);
-
   useProtectedPage();
-
+  const [data, reload, setReload] = useRequestData(`${BASE_URL}gabriel/trips`);
   const navigate = useNavigate();
+  let { id } = useParams();
 
   const logOut = () => {
     localStorage.removeItem("token");
@@ -23,28 +22,24 @@ function AdminHomePage() {
   const deleteTrip = (id) => {
     const token = localStorage.getItem("token");
     axios
-      .delete(`${BASE_URL}trips/${id}`, {
-        headers: {
-          "Content-type": "application/json",
-          auth: token,
-        },
-      })
+      .delete(`${BASE_URL}gabriel/trips/${id}`, { headers: { auth: token } })
       .then((res) => {
         alert("Viagem deletada com sucesso");
-        setReload(!reload);
       })
       .catch((err) => {
         alert("Ops! Algo deu errado");
         console.log(err.response);
       });
+      
   };
+
 
   const tripsList =
     data &&
     data.map((item) => (
       <div key={item.id} value={item.id}>
         <C.Card>
-          <p>{item.name}</p>
+          <p onClick={() => goToTripDetails(navigate, item.id)}>{item.name}</p>
           <FaTrash color="orange" onClick={() => deleteTrip(item.id)}></FaTrash>
         </C.Card>
       </div>

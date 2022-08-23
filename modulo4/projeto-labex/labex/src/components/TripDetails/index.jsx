@@ -11,14 +11,30 @@ function TripDetails() {
     const [tripDetails, setTripDetails] = useState([])
     const [candidate, setCandidate] = useState([])
     const [approved, setApproved] = useState([])
-
+    let {id} = useParams()
     const navigate = useNavigate()
-    const trip = useParams()
+   
     const token = localStorage.getItem('token')
     useProtectedPage();
 
 
-    const getTripDetail = (id) => {
+    const approveCandidate = (id) => {
+      const body = {
+        approved: true
+      }
+      const token = localStorage.getItem('token')
+      axios.put(`${BASE_URL}trips/${id}/cadidates/${id}/decide`, body, {headers:{auth:token}})
+      .then((res)=>{
+        alert('Cadidato aprovado!')
+      }).catch((err)=>{
+        console.log(err.response);
+      })
+
+    }
+    
+
+
+    const getTripDetail = () => {
       axios.get(`${BASE_URL}trip/${id}`, {headers:{
         auth:token
       }}).then((res)=>{
@@ -33,7 +49,7 @@ function TripDetails() {
     }, [])
     
     
-    console.log(getTripDetail)
+    console.log()
  
 
    
@@ -41,8 +57,14 @@ function TripDetails() {
   return (
     <div>
 
-      <h1>trips</h1>
-  
+      <h1>trips details</h1>
+      <p>{getTripDetail.name}</p>
+      <p>{getTripDetail.description}</p>
+      <p>{getTripDetail.planet}</p>
+      <p>{getTripDetail.durationInDays}</p>
+      <p>{getTripDetail.date}</p>
+      <p>{getTripDetail.description}</p>
+      <p>{getTripDetail.candidate}</p>
     </div>
   )
 }
