@@ -6,6 +6,7 @@ function useRequestData(url, headers) {
     const [data, setData] = useState(undefined)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
+    const [reload, setReload] = useState(false)
     
 
     useEffect(()=>{
@@ -23,7 +24,7 @@ function useRequestData(url, headers) {
     }, [url])
 
 
-  return [data, loading, error]
+  return [data, loading, error, reload, setReload]
     
   
 }

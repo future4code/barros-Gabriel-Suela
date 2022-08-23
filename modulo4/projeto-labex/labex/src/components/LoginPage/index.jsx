@@ -5,10 +5,11 @@ import { useForm } from "../../hook/useForm";
 import axios from "axios";
 import { BASE_URL } from "../constants/constants";
 import 'react-toastify/dist/ReactToastify.css';
+import { goToHome } from "../../routes/Coordinator";
 
 function LoginPage() {
 
-  const [body, handleInput ] = useForm({email:"", password:""});
+  const [body, handleInput, clear ] = useForm({email:"", password:""});
   const navigate = useNavigate();
   
 
@@ -24,13 +25,10 @@ function LoginPage() {
       .catch((err) => {
         alert(err.response);
       });
+      clear()
     e.preventDefault();
   };
 
-
-  const goToHome = () => {
-    navigate("/");
-  };
 
   return (
     <C.Container>
@@ -57,7 +55,7 @@ function LoginPage() {
             required
           />
           <C.ButtonArea>
-          <button onClick={goToHome}>Voltar</button>
+          <button onClick={()=>goToHome(navigate)}>Voltar</button>
           <button>Entrar</button>
           </C.ButtonArea>
           

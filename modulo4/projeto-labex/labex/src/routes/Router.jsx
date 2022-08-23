@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AdminHomePage from "./AdminHomePage";
-import ApplicationFormPage from "./ApplicationFormPage";
-import CreateTripPage from "./CreateTripPage";
-import ListTrips from "./ListTrips";
-import LoginPage from "./LoginPage";
-import TripDetails from "./TripDetails";
-import HomePage from "./HomePage";
+import AdminHomePage from "../components/AdminHomePage";
+import ApplicationFormPage from "../components/ApplicationFormPage";
+import CreateTripPage from "../components/CreateTripPage";
+import ListTrips from "../components/ListTrips";
+import LoginPage from "../components/LoginPage";
+import TripDetails from "../components/TripDetails";
+import HomePage from "../components/HomePage";
 
 function Router() {
   return (
@@ -16,7 +16,7 @@ function Router() {
 
         <Route path="/trips/list" element={<ListTrips />} />
 
-        <Route path="/trips/application" element={<ApplicationFormPage />} />
+        <Route path="/trips/application/" element={<ApplicationFormPage />} />
 
         <Route path="/login" element={<LoginPage />} />
 

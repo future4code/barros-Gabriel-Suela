@@ -26,7 +26,8 @@ export const Container = styled.div `
         font-weight: 600;
     }
 
-  
+`
 
-    
+export const ButtonArea = styled.div `
+    text-align: center;
 `

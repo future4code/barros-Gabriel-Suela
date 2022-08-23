@@ -1,5 +1,5 @@
 
-import Router from './components/Router'
+import Router from '../src/routes/Router'
 import React from 'react'
 
 
