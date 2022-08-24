@@ -11,6 +11,10 @@ export const Container = styled.div`
   form {
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 768px){
+      
+    }
   }
 
   input{
@@ -23,9 +27,28 @@ export const Container = styled.div`
     padding: 10px;
     color: #2a2550;
     font-weight: 600;
+    @media screen and (max-width: 768px){
+      width: 400px;
+    }
+
+    @media screen and (max-width: 400px){
+      width: 350px;
+    }
+
   }
 `;
 
 export const ButtonArea = styled.div `
   text-align: center;
+
+  button {
+    @media  screen and (max-width: 768px){
+      padding: 10px;
+    }
+
+    @media screen and (max-width: 400px) {
+      padding: 5px;
+    }
+    
+  }
 `

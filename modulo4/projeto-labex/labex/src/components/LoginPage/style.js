@@ -18,18 +18,19 @@ export const Container = styled.div `
 
 export const FormArea = styled.div`
 
-   
     padding: 30px;
     background-color: #2A2550;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     height: 400px;
     
-    
-    
     form {
         display: flex;
         flex-direction: column;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 350px;
     }
 
     input {
@@ -43,8 +44,12 @@ export const FormArea = styled.div`
         font-weight: 700;
         font-size: 1rem;
         border: 0;
-        
+
+        @media screen and (max-width: 768px) {
+        width: 300px;
+        }
     }
+    
 `
 
 
@@ -52,4 +57,20 @@ export const FormArea = styled.div`
 export const ButtonArea = styled.div `
     text-align: center;
     margin-top: 20px;
+
+    @media screen and (max-width: 768px){
+        display: flex;
+    }
+
+    button {
+        @media screen and (max-width: 768px) {
+            padding: 10px;
+            margin: 5px;
+        }
+
+    @media screen and (max-width: 400px) {
+      padding: 10px;
+      margin: 0px 10px;
+    }
+    }
 `

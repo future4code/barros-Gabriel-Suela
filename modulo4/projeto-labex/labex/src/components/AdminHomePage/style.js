@@ -42,6 +42,17 @@ export const ButtonArea = styled.div `
     align-items: center;
     justify-content: center;
 
-  
+    button {
+        @media screen and (max-width: 768px){
+            padding: 10px;
+            
+        }
+
+        @media screen and (max-width: 400px){
+            width: 100px;
+            
+            padding: 5px;
+        }
+    }
 
 `
