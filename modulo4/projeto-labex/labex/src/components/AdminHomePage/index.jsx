@@ -25,6 +25,7 @@ function AdminHomePage() {
       .delete(`${BASE_URL}gabriel/trips/${id}`, { headers: { auth: token } })
       .then((res) => {
         alert("Viagem deletada com sucesso");
+        setReload(!reload)
       })
       .catch((err) => {
         alert("Ops! Algo deu errado");
@@ -49,10 +50,11 @@ function AdminHomePage() {
       <h1>Admin control</h1>
       <C.ButtonArea>
         <button onClick={() => lastPage(navigate)}>Voltar</button>
-        <button onClick={() => newTrips(navigate)}>Criar Viagem</button>
+        
         <button onClick={logOut}>Logout</button>
       </C.ButtonArea>
       <div>{tripsList}</div>
+      <a onClick={() => newTrips(navigate)}>Criar viagem</a>
     </C.Container>
   );
 }

@@ -17,7 +17,6 @@ function LoginPage() {
     axios
       .post(`${BASE_URL}gabriel/login`, body)
       .then((res) => {
-        alert("LOGADO");
         console.log(res.data)
         localStorage.setItem('token', res.data.token)
         navigate('/admin/trips/list')

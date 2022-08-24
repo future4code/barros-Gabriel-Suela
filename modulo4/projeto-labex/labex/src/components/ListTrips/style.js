@@ -9,7 +9,6 @@ export const Container = styled.div `
         color: #E04D01;
         margin-bottom: 10px;
         text-align: center;
-        font-weight: 900;
         @media screen and (max-width: 768px){
             margin-top: 10px;
         }
@@ -71,7 +70,10 @@ export const Card = styled.div`
         width: 100%;
         border-radius: 10px;
         margin: 0;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
         @media screen and (max-width: 768px){
             height: 40px;
             text-align: center;

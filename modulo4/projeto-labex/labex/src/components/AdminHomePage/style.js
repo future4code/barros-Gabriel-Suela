@@ -9,7 +9,43 @@ export const Container = styled.div `
 
     h1 {
         color:  #E04D01;
+        
     }
+
+    a {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: ease cubic-bezier(0.075, 0.82, 0.165, 1);
+        cursor: pointer;
+        color: #E04D01;
+        position: relative;
+        text-decoration: none;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #FF7700;
+            visibility: hidden;
+            transform: scaleX(0);
+            -webkit-transform: scaleX(0);
+            -webkit-transition: all 0.3 ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+            
+        }
+
+        &:hover:before{
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+    }
+  
+    
 `
 
 export const Card = styled.div`
@@ -42,17 +78,16 @@ export const ButtonArea = styled.div `
     align-items: center;
     justify-content: center;
 
+  
+
     button {
+
         @media screen and (max-width: 768px){
             padding: 10px;
             
         }
 
-        @media screen and (max-width: 400px){
-            width: 100px;
-            
-            padding: 5px;
-        }
+        
     }
 
 `

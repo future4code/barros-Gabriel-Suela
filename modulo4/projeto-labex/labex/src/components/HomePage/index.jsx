@@ -18,8 +18,8 @@ function HomePage() {
        <img src='https://images.vexels.com/media/users/3/152536/isolated/preview/401b51c3a9098f12b566121c92009877-mars-planet-icon.png' width={100} />
       </section>
     <div>
-      <C.Button onClick={() => goToTrips(navigate)}>Ver Viagens</C.Button>
-      <C.Button onClick={() => goToAdmin(navigate)}>Área de Admin</C.Button>
+      <button onClick={() => goToTrips(navigate)}>Ver Viagens</button>
+      <button onClick={() => goToAdmin(navigate)}>Área de Admin</button>
     </div>
      
 
