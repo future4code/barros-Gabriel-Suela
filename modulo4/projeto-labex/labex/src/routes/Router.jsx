@@ -7,6 +7,7 @@ import ListTrips from "../pages/ListTrips";
 import LoginPage from "../pages/LoginPage";
 import TripDetails from "../pages/TripDetails";
 import HomePage from "../pages/HomePage";
+import { MenuMobile } from "../components/MenuMobile";
 
 function Router() {
   
@@ -27,6 +28,8 @@ function Router() {
         <Route path="/admin/trips/create" element={<CreateTripPage />} />
 
         <Route path="/admin/trips/:id" element={<TripDetails />} />
+
+        <Route path="/" element={<MenuMobile/>} />
       </Routes>
     </BrowserRouter>
   );

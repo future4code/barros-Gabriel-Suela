@@ -25,3 +25,7 @@ export const goToTripDetails = (navigate,id) => {
 export const newTrips = (navigate) => {
   navigate('/admin/trips/create')
 }
+
+export const goToSubscribe = (navigate, id) => {
+  navigate('/trips/application')
+}

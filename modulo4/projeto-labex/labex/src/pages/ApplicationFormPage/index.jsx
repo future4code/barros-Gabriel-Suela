@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../HomePage/style";
 import * as C from "./style";
 import useRequestData from "../../hook/useRequestData";
@@ -10,9 +10,6 @@ import {lastPage} from '../../routes/Coordinator'
 
 function ApplicationFormPage() {
   const [data] = useRequestData(`${BASE_URL}gabriel/trips`);
-
-  
-
   const [form, handleInput, clear] = useForm({
     "name": "",
     "age": "",
@@ -20,10 +17,10 @@ function ApplicationFormPage() {
     "profession": "",
     "country": ""
   });
-
-  const applyToTrip = (e) => {
+  
+  const applyToTrip = (e,id) => {
     axios
-      .post(`${BASE_URL}gabriel/trips/:id/apply`, {
+      .post(`${BASE_URL}gabriel/trips/${id}/apply`, {
         name: form.name,
         age: form.age,
         applicationText: form.applicationText,
@@ -36,13 +33,14 @@ function ApplicationFormPage() {
       })
       .catch((err) => {
         console.log(err.response);
+        alert("Ops! Algo deu errado")
       });
     clear();
     e.preventDefault();
   };
 
   const tripsList =
-    data && data.map((item) => <option key={item.id}>{item.name} </option>);
+    data && data.map((item) => <option key={item.id}>{item.name}</option>);
 
   const navigate = useNavigate();
 
@@ -90,7 +88,7 @@ function ApplicationFormPage() {
           value={form.country}
           onChange={handleInput}
         >
-          <option value="default" selected="selected">
+          <option selected="selected">
             Select Country
           </option>
           <option>Afghanistan</option>
