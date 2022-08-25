@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../HomePage/style";
 import * as C from "./style";
 import useRequestData from "../../hook/useRequestData";
-import { BASE_URL } from "../constants/constants";
+import { BASE_URL } from "../../components/constants/constants";
 import axios from "axios";
 import { useForm } from "../../hook/useForm";
 import {lastPage} from '../../routes/Coordinator'

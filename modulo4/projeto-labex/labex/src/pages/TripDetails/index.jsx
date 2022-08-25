@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
 import { useProtectedPage } from '../../hook/useProtectedPage'
 import useRequestData from '../../hook/useRequestData'
-import {BASE_URL} from '../constants/constants'
+import {BASE_URL} from '../../components/constants/constants'
 import { useState } from 'react'
 import axios from 'axios'
 

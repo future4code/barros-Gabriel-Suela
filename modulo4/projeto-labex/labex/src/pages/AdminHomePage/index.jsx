@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useProtectedPage } from "../../hook/useProtectedPage";
 import useRequestData from "../../hook/useRequestData";
-import { BASE_URL } from "../constants/constants";
+import { BASE_URL } from "../../components/constants/constants";
 import * as C from "./style";
 import { FaTrash } from "react-icons/fa";
 import axios from "axios";

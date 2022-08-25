@@ -3,8 +3,7 @@ import * as C from "./style";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hook/useForm";
 import axios from "axios";
-import { BASE_URL } from "../constants/constants";
-import 'react-toastify/dist/ReactToastify.css';
+import { BASE_URL } from "../../components/constants/constants";
 import { goToHome } from "../../routes/Coordinator";
 
 function LoginPage() {

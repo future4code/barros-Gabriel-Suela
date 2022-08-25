@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import useRequestData from '../../hook/useRequestData'
-import { BASE_URL } from '../constants/constants'
+import { BASE_URL } from '../../components/constants/constants'
 import * as C from './style'
 
 
