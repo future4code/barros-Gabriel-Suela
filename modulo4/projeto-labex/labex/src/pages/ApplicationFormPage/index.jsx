@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../HomePage/style";
 import * as C from "./style";
@@ -9,18 +9,22 @@ import { useForm } from "../../hook/useForm";
 import {lastPage} from '../../routes/Coordinator'
 
 function ApplicationFormPage() {
-  const [data] = useRequestData(`${BASE_URL}gabriel/trips`);
+  const [data, setData] = useRequestData(`${BASE_URL}gabriel/trips`);
   const [form, handleInput, clear] = useForm({
+    "id": "",
     "name": "",
     "age": "",
     "applicationText": "",
     "profession": "",
     "country": ""
   });
+
+
+  const applyToTrip = (e, id) => {
+    e.preventDefault();
   
-  const applyToTrip = (e,id) => {
     axios
-      .post(`${BASE_URL}gabriel/trips/${id}/apply`, {
+      .post(`${BASE_URL}gabriel/trips/${form.trip}/apply`, {
         name: form.name,
         age: form.age,
         applicationText: form.applicationText,
@@ -29,18 +33,17 @@ function ApplicationFormPage() {
       })
       .then((res) => {
         alert("Usuário adicionado a viagem!");
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err.response);
         alert("Ops! Algo deu errado")
       });
     clear();
-    e.preventDefault();
   };
 
+  console.log(form.trip);
   const tripsList =
-    data && data.map((item) => <option key={item.id}>{item.name}</option>);
+    data && data.map((item, index) => <option key={index} value={item.id}>{item.name} - {item.planet}</option>);
 
   const navigate = useNavigate();
 
@@ -50,9 +53,8 @@ function ApplicationFormPage() {
       <h1>Inscreva-se para uma viagem</h1>
 
       <form onSubmit={applyToTrip}>
-        <select name="trips" id="" onChange={handleInput}>
+        <select value={form.trip} name="trip" id="trip" onChange={handleInput}>
           {tripsList}
-          
         </select>
         <input
           type="text"
