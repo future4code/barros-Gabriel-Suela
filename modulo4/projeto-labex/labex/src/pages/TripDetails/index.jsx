@@ -12,47 +12,31 @@ import {lastPage} from '../../routes/Coordinator'
 function TripDetails() {
 
     const [tripDetails, setTripDetails] = useState({})
-    const [candidate, setCandidate] = useState([])
-    const [approved, setApproved] = useState([])
     let {id} = useParams()
     const navigate = useNavigate()
    
     const token = localStorage.getItem('token')
     useProtectedPage();
 
-
-    const approveCandidate = (candidateId) => {
+    const approveCandidate = (candidateId, choice) => {
       const body = {
-        approved: true
+        approved: choice
       }
       const token = localStorage.getItem('token')
-      axios.put(`${BASE_URL}trips/${id}/cadidates/${candidateId}/decide`, body, {headers:{auth:token}})
+      axios.put(`${BASE_URL}gabriel/trips/${id}/cadidates/${candidateId}/decide`, body, {headers:{auth:token}})
       .then((res)=>{
-        alert('Cadidato aprovado!')
+        if (choice === true){
+          alert('Cadidato aprovado!')
+        } else {
+          alert ('Candidato reprovado')
+        }
+        
       }).catch((err)=>{
         console.log(err.response);
       })
 
     }
-
-    const reproveCandidate = (candidateId) => {
-      const body = {
-        approved: false
-      }
-      const token = localStorage.getItem('token')
-
-      axios.put(`${BASE_URL}trips/${id}/${candidateId}/decide`, body, {headers:{auth:token}})
-      .then((res)=>{
-        alert('Candidato reprovado')
-        console.log(res.data.trip);
-      })
-      .catch((err)=>{
-        alert('Ops! algo de errado')
-        console.log(err.response);
-      })
-    }
-
-
+    
     const getTripDetail = () => {
       axios.get(`${BASE_URL}gabriel/trip/${id}`, {headers:{
         auth:token
@@ -67,9 +51,6 @@ function TripDetails() {
       getTripDetail()
     }, [])
 
-
-    
-   
     const candidatesList = tripDetails.candidates && tripDetails.candidates.map ((item)=>{
       return (
         <C.Card key={item.id}>
@@ -80,8 +61,8 @@ function TripDetails() {
           <p>Profissão: {item.profession}</p>
           <p>Pais: {item.country}</p>
           <C.ButtonArea>
-          <button onClick={()=> approveCandidate(item.id, item.name)}>Aprovar</button>
-          <button onClick={()=> reproveCandidate(item.id, item.name)}>Reprovar</button>
+          <button onClick={()=> approveCandidate(item.id, true)}>Aprovar</button>
+          <button onClick={()=> approveCandidate(item.id, false)}>Reprovar</button>
           </C.ButtonArea>
 
         </C.Card>

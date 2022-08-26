@@ -10,9 +10,12 @@ import { goToTripDetails, lastPage, newTrips } from "../../routes/Coordinator";
 
 function AdminHomePage() {
   useProtectedPage();
-  const [data, reload, setReload] = useRequestData(`${BASE_URL}gabriel/trips`);
+  const [data] = useRequestData(`${BASE_URL}gabriel/trips`);
   const navigate = useNavigate();
-  let { id } = useParams();
+
+  const reload = () => {
+    window.location.reload();
+  };
 
   const logOut = () => {
     localStorage.removeItem("token");
@@ -25,15 +28,13 @@ function AdminHomePage() {
       .delete(`${BASE_URL}gabriel/trips/${id}`, { headers: { auth: token } })
       .then((res) => {
         alert("Viagem deletada com sucesso");
-        setReload(!reload)
+        reload();
       })
       .catch((err) => {
         alert("Ops! Algo deu errado");
         console.log(err.response);
       });
-      
   };
-
 
   const tripsList =
     data &&
@@ -50,7 +51,7 @@ function AdminHomePage() {
       <h1>Admin control</h1>
       <C.ButtonArea>
         <button onClick={() => lastPage(navigate)}>Voltar</button>
-        
+
         <button onClick={logOut}>Logout</button>
       </C.ButtonArea>
       <div>{tripsList}</div>

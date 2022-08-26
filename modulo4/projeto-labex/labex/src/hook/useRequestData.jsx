@@ -6,8 +6,6 @@ function useRequestData(url, headers) {
     const [data, setData] = useState(undefined)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-    const [reload, setReload] = useState(false)
-    
 
     useEffect(()=>{
      setLoading(true)
@@ -17,14 +15,14 @@ function useRequestData(url, headers) {
         setData(res.data.trips)
       })
       .catch((err)=>{
-        setLoading(false)
+        setLoading()
         setError(err)
-        console.log(err)
       })
-    }, [url])
+      
+    }, [])
 
 
-  return [data, loading, error, reload, setReload]
+  return [data, loading, error]
     
   
 }
