@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useProtectedPage } from "../../hook/useProtectedPage";
 import useRequestData from "../../hook/useRequestData";
@@ -7,11 +7,18 @@ import * as C from "./style";
 import { FaTrash } from "react-icons/fa";
 import axios from "axios";
 import { goToTripDetails, lastPage, newTrips } from "../../routes/Coordinator";
+import { Header } from "../../components/Header";
+import { MenuMobile } from "../../components/MenuMobile";
 
 function AdminHomePage() {
   useProtectedPage();
   const [data] = useRequestData(`${BASE_URL}gabriel/trips`);
   const navigate = useNavigate();
+  const [menuIsVisible, setMenuIsVisible] = useState(true)  
+
+  useEffect(()=>{
+    setMenuIsVisible(false)
+  },[])
 
   const reload = () => {
     window.location.reload();
@@ -47,8 +54,16 @@ function AdminHomePage() {
       </div>
     ));
   return (
+    <>
+     <MenuMobile 
+    menuIsVisible={menuIsVisible}
+    setMenuIsVisible={setMenuIsVisible}
+    
+    />
+    <Header setMenuIsVisible={setMenuIsVisible}/>
+    
     <C.Container>
-      <h1>Admin control</h1>
+      <h1>Painel administrativo</h1>
       <C.ButtonArea>
         <button onClick={() => lastPage(navigate)}>Voltar</button>
 
@@ -57,6 +72,7 @@ function AdminHomePage() {
       <div>{tripsList}</div>
       <a onClick={() => newTrips(navigate)}>Criar viagem</a>
     </C.Container>
+    </>
   );
 }
 

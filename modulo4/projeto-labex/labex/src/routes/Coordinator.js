@@ -16,6 +16,7 @@ export const goToAdmin = (navigate) => {
 
 export const goToHome = (navigate) => {
   navigate("/");
+  localStorage.removeItem('token')
 };
 
 export const goToTripDetails = (navigate,id) => {

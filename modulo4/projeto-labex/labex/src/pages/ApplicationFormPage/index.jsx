@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../HomePage/style";
 import * as C from "./style";
@@ -7,9 +7,12 @@ import { BASE_URL } from "../../components/constants/constants";
 import axios from "axios";
 import { useForm } from "../../hook/useForm";
 import { lastPage } from "../../routes/Coordinator";
+import { MenuMobile } from "../../components/MenuMobile";
+import { Header } from "../../components/Header";
 
 function ApplicationFormPage() {
   const [data] = useRequestData(`${BASE_URL}gabriel/trips`);
+  const [menuIsVisible, setMenuIsVisible] = useState(true);
   const [form, handleInput, clear] = useForm({
     id: "",
     name: "",
@@ -18,6 +21,10 @@ function ApplicationFormPage() {
     profession: "",
     country: "",
   });
+
+  useEffect(() => {
+    setMenuIsVisible(false);
+  }, []);
 
   const applyToTrip = (e) => {
     e.preventDefault();
@@ -31,7 +38,7 @@ function ApplicationFormPage() {
       })
       .then((res) => {
         alert("Usuário adicionado a viagem!");
-        window.location.reload()
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err.response);
@@ -51,56 +58,68 @@ function ApplicationFormPage() {
   const navigate = useNavigate();
 
   return (
-    <C.Container>
-      <h1>Inscreva-se para uma viagem</h1>
+    <>
+      <MenuMobile
+        menuIsVisible={menuIsVisible}
+        setMenuIsVisible={setMenuIsVisible}
+      />
+      <Header setMenuIsVisible={setMenuIsVisible} />
 
-      <form onSubmit={applyToTrip}>
-        <select value={form.trip} name="trip" id="trip" onChange={handleInput}>
-          {tripsList}
-        </select>
-        <input
-          type="text"
-          placeholder="Nome"
-          name="name"
-          value={form.name}
-          onChange={handleInput}
-        ></input>
-        <input
-          type="number"
-          placeholder="Idade"
-          name="age"
-          value={form.age}
-          onChange={handleInput}
-        ></input>
-        <input
-          type="text"
-          placeholder="Texto de Candidatura"
-          name="applicationText"
-          value={form.applicationText}
-          onChange={handleInput}
-        ></input>
-        <input
-          type="text"
-          placeholder="Profissão"
-          name="profession"
-          value={form.occupation}
-          onChange={handleInput}
-        ></input>
-        <select
-          name="country"
-          value={form.country}
-          onChange={handleInput}
-        >
-          <option selected="selected">Selecione o pais</option>
-          <option value='Brasil'>Brasil</option>
-        </select>
+      <C.Container>
+        <h1>Inscreva-se para uma viagem</h1>
 
-        <C.ButtonArea>
-          <Button>Enviar</Button>
-          <Button onClick={() => lastPage(navigate)}>Voltar</Button>
-        </C.ButtonArea>
-      </form>
-    </C.Container>
+        <form onSubmit={applyToTrip}>
+          <select
+            value={form.trip}
+            name="trip"
+            id="trip"
+            onChange={handleInput}
+          >
+            {tripsList}
+          </select>
+          <input
+            type="text"
+            placeholder="Nome"
+            name="name"
+            value={form.name}
+            onChange={handleInput}
+          ></input>
+          <input
+            type="number"
+            placeholder="Idade"
+            name="age"
+            value={form.age}
+            onChange={handleInput}
+          ></input>
+          <input
+            type="text"
+            placeholder="Texto de Candidatura"
+            name="applicationText"
+            value={form.applicationText}
+            onChange={handleInput}
+          ></input>
+          <input
+            type="text"
+            placeholder="Profissão"
+            name="profession"
+            value={form.occupation}
+            onChange={handleInput}
+          ></input>
+          <input
+            type="text"
+            placeholder="Pais"
+            name="country"
+            value={form.country}
+            onChange={handleInput}
+          />
+
+          <C.ButtonArea>
+            <Button>Enviar</Button>
+          </C.ButtonArea>
+        </form>
+        <Button onClick={() => lastPage(navigate)}>Voltar</Button>
+      </C.Container>
+    </>
   );
 }
 

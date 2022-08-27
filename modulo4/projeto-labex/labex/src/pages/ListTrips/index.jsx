@@ -4,11 +4,17 @@ import useRequestData from "../../hook/useRequestData";
 import { BASE_URL } from "../../components/constants/constants";
 import * as C from "./style";
 import { goToSubscribe, lastPage } from "../../routes/Coordinator";
+import { MenuMobile } from "../../components/MenuMobile";
+import { Header } from "../../components/Header";
 
 function ListTrips() {
   const [data, loading, error] = useRequestData(`${BASE_URL}gabriel/trips`);
-
+  const [menuIsVisible, setMenuIsVisible] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setMenuIsVisible(false);
+  }, []);
 
   const tripsList =
     data &&
@@ -26,16 +32,24 @@ function ListTrips() {
     ));
 
   return (
-    <C.Container>
-      <h1>Lista de Viagens</h1>
+    <>
+      <MenuMobile
+        menuIsVisible={menuIsVisible}
+        setMenuIsVisible={setMenuIsVisible}
+      />
+      <Header setMenuIsVisible={setMenuIsVisible} />
 
-      <C.Trips>
-        {loading && <span>Carregando...</span>}
-        {!loading && error && <span>Ocorreu um erro</span>}
-        {tripsList}
-        <button onClick={() => lastPage(navigate)}>Voltar</button>
-      </C.Trips>
-    </C.Container>
+      <C.Container>
+        <h1>Lista de Viagens</h1>
+
+        <C.Trips>
+          {loading && <span>Carregando...</span>}
+          {!loading && error && <span>Ocorreu um erro</span>}
+          {tripsList}
+          <button onClick={() => lastPage(navigate)}>Voltar</button>
+        </C.Trips>
+      </C.Container>
+    </>
   );
 }
 

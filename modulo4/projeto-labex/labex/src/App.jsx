@@ -15,15 +15,18 @@ function App() {
 
   return (
 
-    <>
-    <MenuMobile 
+   
+  
+    <Router>
+        <MenuMobile 
     menuIsVisible={menuIsVisible}
     setMenuIsVisible={setMenuIsVisible}
     
     />
     <Header setMenuIsVisible={setMenuIsVisible}/>
-    <Router/>
-    </>
+    </Router>
+  
+    
    
     
   )

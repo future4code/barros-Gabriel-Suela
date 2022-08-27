@@ -17,7 +17,7 @@ export const Container = styled.section `
     opacity: 0;
     pointer-events: none;
     transform: translateY(50px);
-    transition: .5s;
+    
 
     > svg {
         position: absolute;
@@ -34,7 +34,7 @@ export const Container = styled.section `
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         transform: scale(0.7);
         transition: .7s;
     }
