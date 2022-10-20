@@ -13,8 +13,20 @@ type Pessoa = {
     corFavorita: string
 }
 
-const newObject: Pessoa =  [{
+const newObject: Pessoa =  {
     nome: "Gabriel",
     idade: 28,
     corFavorita: "Verde"
-}]
+}
+
+const newObject2: Pessoa = {
+    nome: "Thays",
+    idade: 29,
+    corFavorita: "Azul"
+}
+
+const newObject3: Pessoa = {
+    nome: "João",
+    idade: 22,
+    corFavorita: "Amarelo"
+}
