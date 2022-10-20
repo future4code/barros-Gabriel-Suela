@@ -3,7 +3,7 @@ type Post = {
     texto: string
 }
 
-const posts  = (:Post) => void [
+const posts:Post[]  =  [
     {
       autor: "Alvo Dumbledore",
       texto: "Não vale a pena viver sonhando e se esquecer de viver"
@@ -26,3 +26,12 @@ const posts  = (:Post) => void [
     }
   ]
 
+//b) as entradas são 2 strings e a saida também
+
+  function buscarPostsPorAutor(posts:any, autorInformado:string) {
+    return posts.filter(
+      (post:Post) => {
+        return post.autor === autorInformado
+      }
+    )
+  }
