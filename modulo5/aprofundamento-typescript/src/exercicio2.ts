@@ -1,9 +1,17 @@
+type Estatistica = {
+    number: number
+}
 
-function obterEstatisticas(numeros): Estatistica{
+type amostraDeDados = {
+    numeros: number,
+    obterStatistica: any
+}
+
+function obterEstatisticas(numeros:number):Estatistica => {
 	maior:number,
 	menor:number,
 	media:number
-}{
+}
 
     const numerosOrdenados = numeros.sort(
         (a, b) => a - b
@@ -23,3 +31,5 @@ function obterEstatisticas(numeros): Estatistica{
 
     return estatisticas
 }
+
+//a) entradas são dois números e a saída é um array
