@@ -13,9 +13,9 @@ type Filmes = {
     pontuacao? : number
 }
 
-function filmsList(nome:string, ano:number, genero:GENERO, pontuacao: number): Filmes{
+//function filmsList(nome:string, ano:number, genero:GENERO, pontuacao: number): Filmes{
 
     
-}
+//}
 
 

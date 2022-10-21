@@ -25,7 +25,15 @@ enum SETOR {
 
 
 
-function verificarSaldo () : Pessoas {
-    
+function verificarSaldo (saldos:Pessoas[]) {
+    const saldoFiler = saldos.filter((item, index)=> {
+        if (item.setor == "marketing"){
+            return console.log(saldoFiler); 
+        }
+    })
 }
+
+
+
+
 

@@ -6,6 +6,6 @@
        "outDir": "./build",        /* Redirect output structure to the directory. */
        "rootDir": "./src",         /* Specify the root directory of input files. */
        "removeComments": true,    /* Do not emit comments to output. */
-       "noImplicitAny": true       /* Raise error on declarations with an implied 'any' type. */
+       "noImplicitAny": false       /* Raise error on declarations with an implied 'any' type. */
    }
 }
