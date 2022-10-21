@@ -13,10 +13,9 @@ type Filmes = {
     pontuacao? : number
 }
 
-function filmsList(nome, ano, genero, pontuacao): Filmes{}{
+function filmsList(nome:string, ano:number, genero:GENERO, pontuacao: number): Filmes{
 
-    
-
-    return console.log(filmes);
     
 }
+
+
