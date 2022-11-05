@@ -1,6 +1,6 @@
 import express, {Request, Response} from "express"
-
 import cors from "cors"
+import {produtos} from "../src/data"
 
 const app = express()
 
@@ -18,3 +18,8 @@ app.get("/test", (req:Request, res:Response) => {
     return console.log('Servidor rodando na porta 3003');
 })
 
+//4)
+
+app.post('/produto', (req:Request, res:Response)=>{
+    
+})

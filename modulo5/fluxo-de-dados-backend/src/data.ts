@@ -1,4 +1,4 @@
-const produtos = [
+export const produtos = [
 {
     id:'ewqiop',
     name:'escova',
