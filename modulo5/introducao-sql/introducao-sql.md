@@ -15,24 +15,38 @@ d) o campo nome não tem um valor padrão, ou seja, como é definido na criaçã
 e) valor incorreto para o valor de data. Isso ocorre pois as datas devem ser passadas por "".
 
 ## 3)
-
+```sh
 a) SELECT * from Actor WHERE gender = "female";
+```
+```sh
 b) SELECT salary from Actor WHERE nome = "Tony Ramos";
+```
+
 c) retorna uma tabela onde todos os campos são null pois na tabela criada, não existe o valor invalid para gender.
+
+```sh
 e) SELECT id, nome, salary from Actor WHERE salary < 500000;
+```
 
 ## 4)
 
 a) a querry está buscando na tabela actor todas as informações de resultados que comecem com a letra A ou a letra j e o salário maior que 300000
 
+```sh
 b) SELECT * FROM Actor WHERE (nome NOT LIKE "A%") AND salary > 35000000;
+```
 
+```sh
 C) SELECT * FROM Actor WHERE nome LIKE "g%" or nome LIKE "G%";
+```
 
+```sh
 d) SELECT * FROM Actor WHERE (name LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%a%" OR name LIKE "%A%") AND salary BETWEEN 350000 AND 900000;
-
+```
 ## 5
 
+
+```sh
 a) CREATE TABLE Filmes(
 	id VARCHAR(255) PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -40,7 +54,10 @@ a) CREATE TABLE Filmes(
     data_de_lancamento DATE NOT NULL,
     avaliacao INT NOT NULL
 );
+```
 
+
+```sh
 b) INSERT INTO Filmes (id, nome, sinopse, data_de_lancamento, avaliacao)
     VALUES("001", 
     "Se Eu Fosse Você", 
@@ -48,7 +65,10 @@ b) INSERT INTO Filmes (id, nome, sinopse, data_de_lancamento, avaliacao)
     "2006-01-06", 
     7
 );
+```
 
+
+```sh
 c) INSERT INTO Filmes (id, nome, sinopse, data_de_lancamento, avaliacao)
 VALUES(
     "002",
@@ -57,7 +77,9 @@ VALUES(
     "2012-12-27",
      10
 );
+```
 
+```sh
 d) INSERT INTO Filmes (id, nome, sinopse, data_de_lancamento, avaliacao)
 VALUES(
     "003", 
@@ -66,8 +88,11 @@ VALUES(
     "2017-11-02", 
     8
 );
+```
 
-e) INSERT INTO Filmes (id, nome, sinopse, data_de_lancamento, avaliacao) 
+e) 
+``` sh
+INSERT INTO Filmes (id, nome, sinopse, data_de_lancamento, avaliacao) 
 VALUES(
 	"004",
     "Deus é Brasileiro",
@@ -75,6 +100,43 @@ VALUES(
     "2003-01-31",
     9
 );
+```
+
+
+## 6)
+```sh
+a) SELECT id, nome, avaliacao FROM Filmes WHERE id = "002";
+```
+
+```sh
+b) SELECT * FROM Filmes WHERE nome = "Dona Flor e Seus Dois Maridos";
+```
+
+```sh
+c) SELECT id, nome, sinopse FROM Filmes WHERE avaliacao > 7;
+```
+
+## 7)
+
+```sh
+a) SELECT * FROM Filmes WHERE nome LIKE "%vida%";
+```
+
+```sh
+b) SELECT * FROM Filmes where nome LIKE "%TERMO DE BUSCA%" OR sinopse LIKE "%TERMO DE BUSCA%";
+```
+
+```sh
+c) SELECT * FROM Filmes WHERE data_de_lancamento < "2020-05-04"
+```
+
+```sh
+d) SELECT * FROM MOVIE
+WHERE data_de_lancamento < "2020-05-04" AND 
+      (nome LIKE "%TERMO DE BUSCA%" OR
+      sinopse LIKE "%TERMO DE BUSCA%") AND avaliacao > 7;
+      
+```
 
 
 
