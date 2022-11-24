@@ -1,4 +1,4 @@
-import express{Request,Response} from 'express'
+import express, {Request,Response} from 'express'
 import knex from 'knex'
 import dotenv from 'dotenv'
 import cors from 'cors'
