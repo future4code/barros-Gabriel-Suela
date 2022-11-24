@@ -1,0 +1,15 @@
+GET http://localhost:3003/address/:cep
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name":"Gabriel",
+    "nickname": "Suela",
+    "email": "gabrieldev@gmail.com",
+    "cep":"23895185",
+    "numero": "1"
+}
