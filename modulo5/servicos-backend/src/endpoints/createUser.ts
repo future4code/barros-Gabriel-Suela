@@ -26,10 +26,9 @@ export default async function createUser(
 			cep: result.cep,
 			logradouro: result.logradouro,
 			numero,
-			complemento: result.complemento,
 			bairro: result.bairro,
 			cidade: result.localidade,
-			estado: result.uf,
+			estado: result.uf
 		};
 
 		await connection("aula_webservices_users").insert(newUser);

@@ -1,4 +1,4 @@
-GET http://localhost:3003/address/:cep
+GET http://localhost:3003/address/23895185
 Content-Type: application/json
 
 ###
@@ -13,3 +13,5 @@ Content-Type: application/json
     "cep":"23895185",
     "numero": "1"
 }
+
+###

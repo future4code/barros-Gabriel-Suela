@@ -11,10 +11,16 @@ const createTables = () =>
 			`
       CREATE TABLE IF NOT EXISTS aula_webservices_users (
          id VARCHAR(255) PRIMARY KEY,
+		 cep VARCHAR(255) NOT NULL,
+		 logradouro VARCHAR(255) NOT NULL,
+		 numero INT NOT NULL,
+		 bairro VARCHAR(255) NOT NULL,
+		 cidade VARCHAR(255) NOT NULL,
+		 estado VARCHAR(255) NOT NULL,
+		 complemento VARCHAR(255),
          name VARCHAR(255) NOT NULL,
          nickname VARCHAR(255) NOT NULL,
-         email VARCHAR(255) UNIQUE NOT NULL,
-         address VARCHAR(255) NOT NULL
+         email VARCHAR(255) UNIQUE NOT NULL
       );
    `
 		)

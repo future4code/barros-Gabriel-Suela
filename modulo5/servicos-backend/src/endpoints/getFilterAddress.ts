@@ -1,6 +1,5 @@
 import { getFullAddress } from './../requests/getFullAdress';
 import { Request, Response } from "express";
-import { BASE_URL, connection } from "../data/connection";
 import { FilterAddress } from "../types/types";
 
 export default async function getFilterAddress(
